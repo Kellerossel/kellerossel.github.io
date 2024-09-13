@@ -62,11 +62,11 @@
         }
 
         /* Aktiver Link */
-        .navbar a.active {
+        .navbar a:target, .navbar a.active {
             background-color: #04AA6D;
         }
 
-        .navbar a.inactive {
+        .navbar a:not(:target) {
             background-color: #575757;
         }
 
@@ -83,8 +83,18 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="#home" class="active" data-description="Gehe zur Startseite">Home</a>
-        <a href="#me" class="inactive" data-description="Erfahre mehr über uns">Me</a>
+        <a href="#home" id="home" data-description="Gehe zur Startseite">Home</a>
+        <a href="#me" id="me" data-description="Erfahre mehr über uns">Me</a>
+    </div>
+
+    <div id="home" class="content">
+        <h1>Home</h1>
+        <p>Willkommen auf der Startseite!</p>
+    </div>
+
+    <div id="me" class="content">
+        <h1>Me</h1>
+        <p>Erfahre mehr über uns!</p>
     </div>
 </body>
 </html>
