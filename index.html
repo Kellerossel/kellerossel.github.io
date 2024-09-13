@@ -16,20 +16,65 @@
             align-items: center;
             height: 100vh;
         }
+          /* Style für die Navbar */
         .navbar {
-            background-color: #4f2c5e;
-            align-items: center;
-            width: 100vw;
-            height: 8vh;
-            position-x: 0;
-            position-y: 0;
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Style für Links in der Navbar */
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        /* Wechsel der Hintergrundfarbe beim Hover */
+        .navbar a:hover {
+            background-color: #575757;
+        }
+
+        /* Style für aktive Links */
+        .navbar a.active {
+            background-color: #04AA6D;
+        }
+
+        /* Inhalt der Seite */
+        .content {
+            padding: 20px;
+            text-align: center;
         }
     </style>
     <script>
     </script>
 </head>
 <body>
-    <div class="navbar">Hi</div>
+       <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Beispielhafte Inhalte für jede Kategorie -->
+    <div class="content">
+        <h1 id="home">Willkommen auf der Startseite</h1>
+        <p>Hier ist der Inhalt für die Startseite deiner Website.</p>
+
+        <h1 id="about">Über uns</h1>
+        <p>Hier erfährst du mehr über uns und unser Unternehmen.</p>
+
+        <h1 id="services">Unsere Dienstleistungen</h1>
+        <p>Hier findest du eine Übersicht unserer Services.</p>
+
+        <h1 id="contact">Kontakt</h1>
+        <p>Hier kannst du uns erreichen.</p>
+    </div>
     <h1>Welcome to my Website</h1>
 </body>
 </html>
