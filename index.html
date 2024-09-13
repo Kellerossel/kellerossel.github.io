@@ -16,64 +16,87 @@
             align-items: center;
             height: 100vh;
         }
-          /* Style für die Navbar */
+               /* Vertikale Navbar */
         .navbar {
             background-color: #333;
-            overflow: hidden;
+            width: 200px;
+            height: 100vh; /* Vollständige Höhe */
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: start;
+            align-items: stretch;
         }
 
-        /* Style für Links in der Navbar */
+        /* Links in der Navbar */
         .navbar a {
-            display: block;
+            padding: 20px;
             color: white;
-            text-align: center;
-            padding: 14px 20px;
+            text-align: left;
             text-decoration: none;
+            border-bottom: 1px solid #444;
+            position: relative;
         }
 
-        /* Wechsel der Hintergrundfarbe beim Hover */
-        .navbar a:hover {
+        /* Beschreibung auf Hover anzeigen */
+        .navbar a::after {
+            content: attr(data-description); /* Beschreibung aus Attribut */
+            position: absolute;
+            left: 220px;
+            top: 50%;
+            transform: translateY(-50%);
             background-color: #575757;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            white-space: nowrap;
         }
 
-        /* Style für aktive Links */
+        /* Hover-Effekt für die Navbar-Links */
+        .navbar a:hover::after {
+            opacity: 1;
+        }
+
+        /* Aktiver Link */
         .navbar a.active {
             background-color: #04AA6D;
         }
 
-        /* Inhalt der Seite */
+        /* Inhaltsbereich */
         .content {
+            flex-grow: 1;
             padding: 20px;
-            text-align: center;
+        }
+
+        .content h1 {
+            margin-top: 0;
         }
     </style>
     <script>
     </script>
 </head>
 <body>
-       <!-- Navbar -->
     <div class="navbar">
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="active" data-description="Gehe zur Startseite">Home</a>
+        <a href="#about" data-description="Erfahre mehr über uns">About</a>
+        <a href="#services" data-description="Unsere angebotenen Dienstleistungen">Services</a>
+        <a href="#contact" data-description="Kontaktiere uns">Contact</a>
     </div>
 
-    <!-- Beispielhafte Inhalte für jede Kategorie -->
+    <!-- Inhaltsbereich -->
     <div class="content">
         <h1 id="home">Willkommen auf der Startseite</h1>
-        <p>Hier ist der Inhalt für die Startseite deiner Website.</p>
+        <p>Dies ist der Inhalt der Startseite. Wähle eine Kategorie aus der Navigation, um weitere Informationen anzuzeigen.</p>
 
         <h1 id="about">Über uns</h1>
-        <p>Hier erfährst du mehr über uns und unser Unternehmen.</p>
+        <p>Hier erfährst du mehr über uns und unser Team.</p>
 
         <h1 id="services">Unsere Dienstleistungen</h1>
-        <p>Hier findest du eine Übersicht unserer Services.</p>
+        <p>Hier findest du eine Übersicht unserer angebotenen Dienstleistungen.</p>
 
         <h1 id="contact">Kontakt</h1>
-        <p>Hier kannst du uns erreichen.</p>
+        <p>Hier findest du unsere Kontaktdaten, um uns zu erreichen.</p>
     </div>
     <h1>Welcome to my Website</h1>
 </body>
