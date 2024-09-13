@@ -81,37 +81,11 @@
         }
     </style>
     <script>
-        function handleClick(event) {
-            // Verhindert das Standardverhalten des Links
-            event.preventDefault();
-
-            // Holt alle Navbar-Elemente
-            const tabs = document.querySelectorAll('.navbar a');
-
-            // Entfernt die Klasse 'active' von allen Navbar-Elementen
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-                tab.classList.add('inactive');
-            });
-
-            // Holt das angeklickte Element und fügt die Klasse 'active' hinzu
-            const activeTab = event.target;
-            activeTab.classList.remove('inactive');
-            activeTab.classList.add('active');
-        }
-
-        // Füge Event Listener zu allen Navbar-Links hinzu
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabs = document.querySelectorAll('.navbar a');
-            tabs.forEach(tab => {
-                tab.addEventListener('click', handleClick);
-            });
-        });
     </script>
 </head>
 <body>
     <div class="navbar">
-        <a href="/" class="active" data-description="Gehe zur Startseite">Home</a>
+        <a href="#home" class="active" data-description="Gehe zur Startseite">Home</a>
         <a href="#me" class="inactive" data-description="Erfahre mehr über uns">Me</a>
     </div>
 </body>
