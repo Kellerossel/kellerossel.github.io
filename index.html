@@ -81,14 +81,21 @@
         }
     </style>
     <script>
+        <script>
+    function handleClick(sectionId) {
+        alert('Navigating to ' + sectionId);
+            for()
+            document.getElementByID(sectionID).class="active";
+            
+    }
+</script>
+
     </script>
 </head>
 <body>
     <div class="navbar">
-        <a href="#home" class="active" data-description="Gehe zur Startseite">Home</a>
-        <a href="#about" data-description="Erfahre mehr über uns">About</a>
-        <a href="#services" data-description="Unsere angebotenen Dienstleistungen">Services</a>
-        <a href="#contact" data-description="Kontaktiere uns">Contact</a>
+        <a href="#home" class="active" data-description="Gehe zur Startseite" onclick="handleClick('home')">Home</a>
+        <a href="#me" class="inactive" data-description="Erfahre mehr über uns" onclick="handleClick('me')">Me</a>
     </div>
 </body>
 </html>
