@@ -15,18 +15,11 @@
             height: 100vh;
         }
 
-        /* Flexbox container */
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
         /* Navbar styling */
         .navbar {
             background-color: #333;
             width: 200px;
-            height: 100%;
+            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: start;
@@ -34,7 +27,7 @@
         }
 
         /* Links in the navbar */
-        .navbar label {
+        .navbar a {
             padding: 20px;
             color: white;
             text-align: left;
@@ -44,76 +37,36 @@
             cursor: pointer;
         }
 
-        /* Active tab link */
-        .navbar input[type="radio"] {
-            display: none;
-        }
-
-        .navbar input[type="radio"]:checked + label {
+        /* Hover effect */
+        .navbar a:hover {
             background-color: #04AA6D;
         }
 
         /* Content area */
-        .content-wrapper {
+        .content {
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
-            overflow-y: auto;
         }
 
-        /* Hide all content sections by default */
-        .tab-content {
-            display: none;
-        }
-
-        /* Show content when the corresponding tab is selected */
-        #home-tab:checked ~ .home-content,
-        #me-tab:checked ~ .me-content,
-        #contact-tab:checked ~ .contact-content {
-            display: block;
-        }
-
-        .content-wrapper h1 {
+        .content h1 {
             margin-top: 0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Flex container for navbar and content -->
-    <div class="container">
-        <!-- Navbar with radio inputs -->
-        <div class="navbar">
-            <input type="radio" id="home-tab" name="tabs" checked>
-            <label for="home-tab">Home</label>
+    <!-- Navbar with links -->
+    <div class="navbar">
+        <a href="https://kellerossel.github.io/home">Home</a>
+        <a href="https://kellerossel.github.io/me">Me</a>
+        <a href="https://kellerossel.github.io/contact">Contact</a>
+    </div>
 
-            <input type="radio" id="me-tab" name="tabs">
-            <label for="me-tab">Me</label>
-
-            <input type="radio" id="contact-tab" name="tabs">
-            <label for="contact-tab">Contact</label>
-        </div>
-
-        <!-- Content Wrapper -->
-        <div class="content-wrapper">
-            <!-- Home Content -->
-            <div class="tab-content home-content">
-                <h1>Home</h1>
-                <p>Welcome to the home section of Kellerossel's personal website.</p>
-            </div>
-
-            <!-- Me Content -->
-            <div class="tab-content me-content">
-                <h1>Me</h1>
-                <p>This is the 'Me' section where you can learn more about Kellerossel.</p>
-            </div>
-
-            <!-- Contact Content -->
-            <div class="tab-content contact-content">
-                <h1>Contact</h1>
-                <p>Get in touch with Kellerossel through this contact section.</p>
-            </div>
-        </div>
+    <!-- Content Area -->
+    <div class="content">
+        <h1>Welcome</h1>
+        <p>This is a simple navigation menu. Clicking on the links will redirect you to the relevant pages.</p>
     </div>
 
 </body>
