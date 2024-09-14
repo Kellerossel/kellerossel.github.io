@@ -83,18 +83,55 @@
 </head>
 <body>
     <div class="navbar">
-        <a href="#home" id="home" data-description="Gehe zur Startseite">Home</a>
-        <a href="#me" id="me" data-description="Erfahre mehr über uns">Me</a>
-    </div>
-    <div id="home" class="content" style="visibility: hidden;">
-        <h1>Home</h1>
-        <p>Willkommen auf der Startseite!</p>
-    </div>
-
-    <div id="me" class="content" style="visibility: visible;">
-        <h1>Me</h1>
-        <p>Erfahre mehr über uns!</p>
+        <a href="#home" id="home-link" data-description="Gehe zur Startseite">Home</a>
+        <a href="#me" id="me-link" data-description="Erfahre mehr über uns">Me</a>
     </div>
     
+    <div id="text" class="content"></div>
+
+    <script>
+        // Get the elements
+        const homeLink = document.getElementById('home-link');
+        const meLink = document.getElementById('me-link');
+        const contentDiv = document.getElementById('text');
+
+        // Function to handle tab switching
+        function showContent(tab) {
+            contentDiv.style.visibility = "visible"; // Make the content visible
+            
+            // Update content based on the selected tab
+            if (tab === 'home') {
+                contentDiv.innerHTML = "<h2>Willkommen auf der Startseite!</h2><p>Dies ist der Home-Tab-Inhalt.</p>";
+                setActiveTab(homeLink);
+            } else if (tab === 'me') {
+                contentDiv.innerHTML = "<h2>Über uns</h2><p>Hier erfährst du mehr über uns.</p>";
+                setActiveTab(meLink);
+            }
+        }
+
+        // Function to set active class on the clicked link
+        function setActiveTab(activeLink) {
+            // Remove 'active' class from all tabs
+            homeLink.classList.remove('active');
+            meLink.classList.remove('active');
+            
+            // Add 'active' class to the currently clicked link
+            activeLink.classList.add('active');
+        }
+
+        // Add event listeners to the links
+        homeLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            showContent('home');
+        });
+
+        meLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            showContent('me');
+        });
+
+        // Optional: Show the Home content by default when the page loads
+        showContent('home');
+    </script>
 </body>
 </html>
