@@ -54,7 +54,7 @@
         }
 
         /* Content area */
-        .content {
+        .content-wrapper {
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
@@ -66,14 +66,14 @@
             display: none;
         }
 
-        /* Display the active content */
-        #home-tab:checked ~ .content #home-content,
-        #me-tab:checked ~ .content #me-content,
-        #contact-tab:checked ~ .content #contact-content {
+        /* Show content when the corresponding tab is selected */
+        #home-tab:checked ~ .home-content,
+        #me-tab:checked ~ .me-content,
+        #contact-tab:checked ~ .contact-content {
             display: block;
         }
 
-        .content h1 {
+        .content-wrapper h1 {
             margin-top: 0;
         }
     </style>
@@ -94,19 +94,22 @@
             <label for="contact-tab">Contact</label>
         </div>
 
-        <!-- Content Area -->
-        <div class="content">
-            <div id="home-content" class="tab-content">
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <!-- Home Content -->
+            <div class="tab-content home-content">
                 <h1>Home</h1>
                 <p>Welcome to the home section of Kellerossel's personal website.</p>
             </div>
 
-            <div id="me-content" class="tab-content">
+            <!-- Me Content -->
+            <div class="tab-content me-content">
                 <h1>Me</h1>
                 <p>This is the 'Me' section where you can learn more about Kellerossel.</p>
             </div>
 
-            <div id="contact-content" class="tab-content">
+            <!-- Contact Content -->
+            <div class="tab-content contact-content">
                 <h1>Contact</h1>
                 <p>Get in touch with Kellerossel through this contact section.</p>
             </div>
