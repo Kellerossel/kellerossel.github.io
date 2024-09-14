@@ -12,11 +12,10 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
             height: 100vh;
             position: relative;
         }
+        /* Navbar styling */
         .navbar {
             background-color: #333;
             width: 200px;
@@ -31,52 +30,43 @@
         }
 
         /* Links in der Navbar */
-        .navbar a {
+        .navbar label {
             padding: 20px;
             color: white;
             text-align: left;
             text-decoration: none;
             border-bottom: 1px solid #444;
-            position: relative;
-        }
-
-        /* Beschreibung auf Hover anzeigen */
-        .navbar a::after {
-            content: attr(data-description); /* Beschreibung aus Attribut */
-            position: absolute;
-            left: 220px;
-            top: 50%;
-            transform: translateY(-50%);
             background-color: #575757;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            white-space: nowrap;
+            cursor: pointer;
         }
 
-        /* Hover-Effekt für die Navbar-Links */
-        .navbar a:hover::after {
-            opacity: 1;
+        /* Active tab link */
+        .navbar input[type="radio"] {
+            display: none;
         }
 
-        /* Aktiver Link */
-        .navbar a:target, .navbar a.active {
+        .navbar input[type="radio"]:checked + label {
             background-color: #04AA6D;
-        }
-
-        .navbar a:not(:target) {
-            background-color: #575757;
         }
 
         /* Inhaltsbereich */
         .content {
-            left: 200px;
-            top: 0vh;
-            width: 100vw - 200px;
-            flex-grow: 1;
+            margin-left: 200px;
             padding: 20px;
+            flex-grow: 1;
+            width: calc(100% - 200px);
+        }
+
+        /* Hide all content sections by default */
+        .tab-content {
+            display: none;
+        }
+
+        /* Display the active content */
+        #home-tab:checked ~ .content #home-content,
+        #me-tab:checked ~ .content #me-content,
+        #contact-tab:checked ~ .content #contact-content {
+            display: block;
         }
 
         .content h1 {
@@ -85,5 +75,36 @@
     </style>
 </head>
 <body>
+
+    <!-- Navbar with radio inputs -->
+    <div class="navbar">
+        <input type="radio" id="home-tab" name="tabs" checked>
+        <label for="home-tab">Home</label>
+
+        <input type="radio" id="me-tab" name="tabs">
+        <label for="me-tab">Me</label>
+
+        <input type="radio" id="contact-tab" name="tabs">
+        <label for="contact-tab">Contact</label>
+    </div>
+
+    <!-- Content Area -->
+    <div class="content">
+        <div id="home-content" class="tab-content">
+            <h1>Home</h1>
+            <p>Welcome to the home section of Kellerossel's personal website.</p>
+        </div>
+
+        <div id="me-content" class="tab-content">
+            <h1>Me</h1>
+            <p>This is the 'Me' section where you can learn more about Kellerossel.</p>
+        </div>
+
+        <div id="contact-content" class="tab-content">
+            <h1>Contact</h1>
+            <p>Get in touch with Kellerossel through this contact section.</p>
+        </div>
+    </div>
+
 </body>
 </html>
