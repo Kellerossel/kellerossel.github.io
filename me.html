@@ -90,7 +90,7 @@
                 let currentTop = parseInt(img.style.top);
 
                 img.style.left = currentLeft + xv + 'px';
-                img.style.top = currentTop + yv + 'px';
+                img.style.top = currentTop - yv + 'px';
 
                 xv = xv / 1.2; // Verlangsame die horizontale Bewegung
                 yv = yv - 1; // Vertikale Geschwindigkeit nimmt ab
