@@ -57,62 +57,8 @@
         }
     </style>
     <script>
-        let intervalId = null;
-        let isSpawning = false;
-
-        function spawnKelle(event) {
-            const img = document.createElement('img');
-            img.src = 'https://avatars.githubusercontent.com/u/135382097?v=4';
-            img.alt = 'Test';
-            img.width = 40;
-            img.height = 40;
-            img.classList.add('spawned');
-
-            const imgRect = event.target.getBoundingClientRect();
-            const imgWidth = 40;
-            const imgHeight = 40;
-            img.style.left = (event.clientX - imgRect.left - imgWidth / 2) + 'px';
-            img.style.top = (event.clientY - imgRect.top - imgHeight / 2) + 'px';
-            img.style.borderRadius = '50%';
-
-            const content = document.querySelector('.content');
-            content.appendChild(img);
-
-            let xv = Math.floor(Math.random() * 10) - 5;
-            let yv = -5;
-
-            function moveImage() {
-                let currentLeft = parseInt(img.style.left);
-                let currentTop = parseInt(img.style.top);
-                img.style.left = currentLeft + xv + 'px';
-                img.style.top = currentTop + yv + 'px';
-                xv = xv / 1.2;
-                yv = yv + 0.5;
-
-                if (currentTop > window.innerHeight || currentLeft < 0 || currentLeft > window.innerWidth) {
-                    img.remove();
-                    clearInterval(moveInterval);
-                }
-            }
-
-            const moveInterval = setInterval(moveImage, 10);
-        }
-
-        function spawnOnMouseMove(event) {
-            if (!isSpawning) {
-                isSpawning = true;
-                spawnKelle(event);
-                setTimeout(() => { isSpawning = false; }, 100);
-            }
-        }
-
-        function startSpawning(event) {
-            event.target.addEventListener('mousemove', spawnOnMouseMove);
-        }
-
-        function stopSpawning(event) {
-            event.target.removeEventListener('mousemove', spawnOnMouseMove);
-        }
+        //I removed all Comments and fucked up everything that makes this easier to understand. Sorry, I had a bad Day :(
+let intervalId=null;let iSv=false;function sK(e){const img=document.createElement('img');img.src='https://avatars.githubusercontent.com/u/135382097?v=4';img.alt='Test';img.width=40;img.height=40;img.classList.add('spawned');const imgRect=e.target.getBoundingClientRect();const imgWidth=40;const imgHeight=40;img.style.left=(e.clientX-imgRect.left-imgWidth/2)+'px';img.style.top=(e.clientY-imgRect.top-imgHeight/2)+'px';img.style.borderRadius='50%';const content=document.querySelector('.content');content.appendChild(img);let xv=Math.floor(Math.random()*10)-5;let yv=-5;function mI(){let cL=parseInt(img.style.left);let cT=parseInt(img.style.top);img.style.left=cL+xv+'px';img.style.top=cT+yv+'px';xv=xv/1.2;yv=yv+0.5;if(cT>window.innerHeight||cL<0||cL>window.innerWidth){img.remove();clearInterval(moveInterval);}}const moveInterval=setInterval(mI,10);}function SoM(e){if(!iSv){iSv=true;sK(e);setTimeout(()=>{iSv=false;},100);}}function d(e){e.target.addEventListener('mousemove', SoM);}function b(e){e.target.removeEventListener('mousemove', SoM);}
     </script>
 </head>
 <body>
@@ -122,7 +68,7 @@
         <a href="/contact.html">Contact</a>
     </div>
     <div class="content">
-        <img onmouseover="startSpawning(event)" onmouseout="stopSpawning(event)" 
+        <img onmouseover="d(e)" onmouseout="b(e)" 
              src="https://avatars.githubusercontent.com/u/135382097?v=4" alt="My Profile Picture" width="150" style="border-radius: 50%;">
         <p>This is me.</p>
     </div>
