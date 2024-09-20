@@ -15,10 +15,29 @@
             display: flex;
             height: 100vh;
             position: relative;
+            cursor: none;
         }
 
+    #custom-cursor {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    transition: transform 0.2s ease; 
+    animation: pulse 1.5s infinite;
+    }
 
-        /* Navbar styling */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
         .navbar {
             background-color: #333;
             width: 200px;
@@ -57,8 +76,16 @@
             margin-top: 0;
         }
     </style>
+    <script>const customCursor = document.getElementById('custom-cursor');
+
+document.addEventListener('mousemove', (e) => {
+    customCursor.style.left = `${e.clientX}px`;
+    customCursor.style.top = `${e.clientY}px`;
+});
+</script>
 </head>
 <body>
+    <div id="custom-cursor"></div>
 
     <!-- Navbar with links -->
     <div class="navbar">
