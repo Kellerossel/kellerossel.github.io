@@ -53,6 +53,16 @@
             margin-top: 0;
         }
     </style>
+    <script>
+        function spawnKelle() {
+            const img = document.createElement('img');
+            img.src = 'https://avatars.githubusercontent.com/u/135382097?v=4';
+            img.alt = 'Test';
+            img.width = 200;
+            img.height = 200;
+            img.radius = 50;
+        }
+    </script>
 </head>
 <body>
 
@@ -65,7 +75,7 @@
 
     <!-- Content Area -->
     <div class="content">
-        <h1>Kellerossel</h1>
+        <h1 onmouseover="spawnKelle();">Kellerossel</h1>
         <p>This is me.</p>
     </div>
 
