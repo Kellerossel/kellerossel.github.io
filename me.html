@@ -16,7 +16,6 @@
             position: relative;
         }
 
-        /* Navbar styling */
         .navbar {
             background-color: #333;
             width: 200px;
@@ -27,7 +26,6 @@
             align-items: stretch;
         }
 
-        /* Links in the navbar */
         .navbar a {
             padding: 20px;
             color: white;
@@ -38,12 +36,10 @@
             cursor: pointer;
         }
 
-        /* Hover effect */
         .navbar a:hover {
             background-color: #04AA6D;
         }
 
-        /* Content area */
         .content {
             flex-grow: 1;
             padding: 20px;
@@ -55,102 +51,80 @@
             margin-top: 0;
         }
 
-        /* Styling spawned images */
         img.spawned {
             position: absolute;
-            pointer-events: none; /* Prevent spawned images from interfering with mouse events */
+            pointer-events: none;
         }
     </style>
     <script>
-        let intervalId = null; // Interval for spawning new images
-        let isSpawning = false; // Flag to control spawn rate
+        let intervalId = null;
+        let isSpawning = false;
 
-        // Function to create and append the image at the mouse position
         function spawnKelle(event) {
             const img = document.createElement('img');
             img.src = 'https://avatars.githubusercontent.com/u/135382097?v=4';
             img.alt = 'Test';
             img.width = 40;
             img.height = 40;
-            img.classList.add('spawned');  // Class to prevent interaction
+            img.classList.add('spawned');
 
-            // Get the bounding box of the img element
             const imgRect = event.target.getBoundingClientRect();
-
-            // Spawn image centered at the mouse position, adjusted by the img element offset
             const imgWidth = 40;
             const imgHeight = 40;
-            img.style.left = (event.clientX - imgRect.left - imgWidth / 2) + 'px';  // Center horizontally
-            img.style.top = (event.clientY - imgRect.top - imgHeight / 2) + 'px';   // Center vertically
-	    img.style.borderRadius = '50%';
-            // Append the image to the content div
+            img.style.left = (event.clientX - imgRect.left - imgWidth / 2) + 'px';
+            img.style.top = (event.clientY - imgRect.top - imgHeight / 2) + 'px';
+            img.style.borderRadius = '50%';
+
             const content = document.querySelector('.content');
             content.appendChild(img);
 
-            // Initialize velocities
-            let xv = Math.floor(Math.random() * 10) - 5; // Random x velocity
-            let yv = -5; // Constant y velocity
+            let xv = Math.floor(Math.random() * 10) - 5;
+            let yv = -5;
 
-            // Function to move the image
             function moveImage() {
                 let currentLeft = parseInt(img.style.left);
                 let currentTop = parseInt(img.style.top);
-
-                // Update the image position
                 img.style.left = currentLeft + xv + 'px';
                 img.style.top = currentTop + yv + 'px';
+                xv = xv / 1.2;
+                yv = yv + 0.5;
 
-                // Update the velocities
-                xv = xv / 1.2; // Slow down horizontal movement
-                yv = yv + 0.5;   // Decrease vertical velocity (falling effect)
-
-                // Remove the image if it goes out of bounds
                 if (currentTop > window.innerHeight || currentLeft < 0 || currentLeft > window.innerWidth) {
-                    img.remove(); // Remove image from the DOM
-                    clearInterval(moveInterval); // Stop movement
+                    img.remove();
+                    clearInterval(moveInterval);
                 }
             }
 
-            // Move the image every 10ms
             const moveInterval = setInterval(moveImage, 10);
         }
 
-        // Throttle spawning images to every 100ms
         function spawnOnMouseMove(event) {
             if (!isSpawning) {
-                isSpawning = true; // Prevent another spawn within the delay
-                spawnKelle(event); // Call spawnKelle at the current mouse position
-                setTimeout(() => { isSpawning = false; }, 100); // Reset after 100ms
+                isSpawning = true;
+                spawnKelle(event);
+                setTimeout(() => { isSpawning = false; }, 100);
             }
         }
 
-        // Start listening to mousemove when hovering over the img
         function startSpawning(event) {
-            event.target.addEventListener('mousemove', spawnOnMouseMove); // Listen for mouse moves on the image
+            event.target.addEventListener('mousemove', spawnOnMouseMove);
         }
 
-        // Stop spawning new images when mouse leaves the img
         function stopSpawning(event) {
-            event.target.removeEventListener('mousemove', spawnOnMouseMove); // Stop listening to mouse moves
+            event.target.removeEventListener('mousemove', spawnOnMouseMove);
         }
     </script>
 </head>
 <body>
-
-    <!-- Navbar with links -->
     <div class="navbar">
         <a href="/home.html">Home</a>
         <a href="/me.html">Me</a>
         <a href="/contact.html">Contact</a>
     </div>
-
-    <!-- Content Area -->
     <div class="content">
-        <!-- Image with hover effect to spawn images -->
         <img onmouseover="startSpawning(event)" onmouseout="stopSpawning(event)" 
              src="https://avatars.githubusercontent.com/u/135382097?v=4" alt="My Profile Picture" width="150" style="border-radius: 50%;">
         <p>This is me.</p>
     </div>
-
 </body>
 </html>
