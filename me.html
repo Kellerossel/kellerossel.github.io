@@ -13,6 +13,7 @@
             padding: 0;
             display: flex;
             height: 100vh;
+            position: relative;
         }
 
         /* Navbar styling */
@@ -47,18 +48,23 @@
             flex-grow: 1;
             padding: 20px;
             background-color: #fff;
+            position: relative;
         }
 
         .content h1 {
             margin-top: 0;
         }
+
+        img {
+            position: absolute;
+        }
     </style>
     <script>
-          function Sleep(milliseconds) {
+        function Sleep(milliseconds) {
             return new Promise(resolve => setTimeout(resolve, milliseconds));
-          }
-        
-          function spawnKelle() {
+        }
+
+        async function spawnKelle() {
             const img = document.createElement('img');
             img.src = 'https://avatars.githubusercontent.com/u/135382097?v=4';
             img.alt = 'Test';
@@ -66,17 +72,30 @@
             img.height = 40;
             img.style.borderRadius = '50%';  // Circular image style
 
+            // Positionierungseinstellungen für das Bild
+            img.style.position = 'absolute';
+            img.style.left = '50px';
+            img.style.top = '50px';
+
             // Füge das Bild in die Content-Div ein
             const content = document.querySelector('.content');
             content.appendChild(img);
-            xv = Math.floor(Math.random() * 10) - 5;
-            yv = 5;
-            for (let i = 0; i < 1000; i++) {
-                img.style.left += xv;
-                img.style.top += yv;
-                xv = xv / 1.2;
-                yv = yv - 1;
-                Sleep(10)
+
+            let xv = Math.floor(Math.random() * 10) - 5;
+            let yv = 5;
+
+            for (let i = 0; i < 100; i++) {
+                // Aktualisiere die Position
+                let currentLeft = parseInt(img.style.left);
+                let currentTop = parseInt(img.style.top);
+
+                img.style.left = currentLeft + xv + 'px';
+                img.style.top = currentTop + yv + 'px';
+
+                xv = xv / 1.2; // Verlangsame die horizontale Bewegung
+                yv = yv - 1; // Vertikale Geschwindigkeit nimmt ab
+
+                await Sleep(10); // Warte 10 ms zwischen den Bewegungen
             }
         }
     </script>
