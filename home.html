@@ -15,28 +15,30 @@
             display: flex;
             height: 100vh;
             position: relative;
-            cursor: none;
+        }
+        body {
+          cursor: url('https://static.vecteezy.com/system/resources/previews/022/750/047/non_2x/low-pixel-mushroom-illustration-png.png'), auto; /* Fallback to default cursor */
         }
 
-    #custom-cursor {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    transition: transform 0.2s ease; 
-    animation: pulse 1.5s infinite;
-    }
+        #custom-cursor {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.8);
+          pointer-events: none;
+          transition: transform 0.2s ease; 
+          animation: pulse 1.5s infinite;
+        }
 
-    @keyframes pulse {
-      0%, 100% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-    }
+        @keyframes pulse {
+          0%, 100% {
+            transform: scale(1);
+          }
+          50% {
+            transform: scale(1.2);
+          }
+        }
 
         .navbar {
             background-color: #333;
