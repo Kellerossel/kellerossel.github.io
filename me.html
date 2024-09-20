@@ -54,13 +54,17 @@
         }
     </style>
     <script>
-        function spawnKelle() {
+          function spawnKelle() {
             const img = document.createElement('img');
             img.src = 'https://avatars.githubusercontent.com/u/135382097?v=4';
             img.alt = 'Test';
             img.width = 200;
             img.height = 200;
-            img.radius = 50;
+            img.style.borderRadius = '50%';  // Circular image style
+
+            // Füge das Bild in die Content-Div ein
+            const content = document.querySelector('.content');
+            content.appendChild(img);
         }
     </script>
 </head>
