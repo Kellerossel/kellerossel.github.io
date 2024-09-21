@@ -56,10 +56,21 @@
             border: 8px solid #5a3a5c;
             background-color: #1c1f2e;
             color: #a4a7bd;
+            text-align: center;
         }
-         .quote-section h2 
-         }
     </style>
+    <script>
+        function randomQuote() {
+            return ["“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler",
+                   "“It’s not a bug – it’s an undocumented feature.” – Anonymous",
+                   "“Simplicity is the soul of efficiency.” – Austin Freeman",
+                   "“The Internet? We are not interested in it.” – Bill Gates, 1993",
+                   "“Hardware: The parts of a computer that can be kicked.” – Jeff Pesis",
+                   "“In theory, there is no difference between theory and practice. But, in practice, there is.” – Yogi Berra",
+                   "“The trouble with quotes on the Internet is that you never know if they are genuine.” – Abraham Lincoln",
+                   "“There are two major products that come out of Berkeley: LSD and UNIX. We don’t believe this to be a coincidence.” – Jeremy S. Anderson"][Math.floor(Math.random() * 7)];
+        }
+    </script>
 </head>
 <body>
     <div class="navbar">
@@ -75,7 +86,7 @@
 
         <div class="quote-section">
         <h2 style="">Random Quote:</h2>
-        <blockquote>“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler</blockquote>
+        <blockquote onload="randomQuote();">“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler</blockquote>
 </div>
 </div>
 </body>
