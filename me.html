@@ -57,6 +57,13 @@
             position: absolute;
             pointer-events: none;
         }
+        #nojserror {
+            min-height: 100vh;
+            min-width: 100vw;
+            text-align: center;
+            background-color: #1c1c1c;
+            color: d8d8d8;
+        }
     </style>
     <script>
         //I removed all Comments and fucked up everything that makes this easier to understand. Sorry, I had a bad Day :(
@@ -64,7 +71,7 @@ let intervalId=null;let iSv=false;function sK(e){const img=document.createElemen
     </script>
 </head>
 <body>
-    <div style="min-height: 100vh; min-width: 100vw;">This Site requires JavaScript to run!</div>
+    <div id="nojserror">This Site requires JavaScript to run!</div>
     <div class="navbar">
         <a href="/home.html">Home</a>
         <a href="/me.html">Me</a>
