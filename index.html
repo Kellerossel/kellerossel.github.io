@@ -9,14 +9,23 @@
         body {
             overflow: hidden;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #211638;
             margin: 0;
             padding: 0;
             display: flex;
             height: 100vh;
+            position: relative;
         }
 
-        /* Navbar styling */
+        .full-screen {
+            min-height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+        }
+
         .navbar {
             background-color: #333;
             width: 200px;
@@ -26,8 +35,6 @@
             justify-content: start;
             align-items: stretch;
         }
-
-        /* Links in the navbar */
         .navbar a {
             padding: 20px;
             color: white;
@@ -38,12 +45,11 @@
             cursor: pointer;
         }
 
-        /* Hover effect */
         .navbar a:hover {
             background-color: #c42bcf;
         }
-        
-         .content {
+
+        .content {
             flex-grow: 1;
             padding: 20px;
             color: #ebdded;
@@ -55,38 +61,53 @@
             margin-top: 0;
         }
 
-        .hidden {
-            visibility: hidden;
+        .quote-section {
+            border: 8px solid #5a3a5c;
+            background-color: #1c1f2e;
+            color: #a4a7bd;
+            text-align: center;
         }
         #nojserror {
             min-height: 100vh;
             min-width: 100vw;
             text-align: center;
             background-color: #1c1c1c;
-            color: #f8f8f8;
+            color: #d8d8d8;
         }
     </style>
     <script>
-        function setup() {
-            document.getElementById("nojserror").style.visibility = "collapse";
+           function setup() {
+        document.getElementById("nojserror").style.visibility = "collapse";
+        }
+        function randomQuote() {
+            document.getElementById("quote").innerHTML = ["“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler",
+                   "“It’s not a bug – it’s an undocumented feature.” – Anonymous",
+                   "“Simplicity is the soul of efficiency.” – Austin Freeman",
+                   "“The Internet? We are not interested in it.” – Bill Gates, 1993",
+                   "“Hardware: The parts of a computer that can be kicked.” – Jeff Pesis",
+                   "“In theory, there is no difference between theory and practice. But, in practice, there is.” – Yogi Berra",
+                   "“The trouble with quotes on the Internet is that you never know if they are genuine.” – Abraham Lincoln",
+                   "“There are two major products that come out of Berkeley: LSD and UNIX. We don’t believe this to be a coincidence.” – Jeremy S. Anderson"][Math.floor(Math.random(1) * 8)];
         }
     </script>
 </head>
-<body onload="setup();">
+<body onload="setup();randomQuote();">
     <div id="nojserror">This Site requires JavaScript to run!</div>
-
-    <!-- Navbar with links -->
     <div class="navbar">
         <a href="/home.html">Home</a>
         <a href="/me.html">Me</a>
         <a href="/contact.html">Contact</a>
     </div>
-
-    <!-- Content Area -->
     <div class="content">
-        <h1>Welcome</h1>
-        <p>This is a simple navigation menu. Clicking on the links will redirect you to the relevant pages.</p>
-    </div>
+        <h1>Welcome to my Website!</h1>
+        <p>This is the place where I want to share some of my interests with you, fellow User. Here, you'll find my latest projects, insights into my Opinions on different stuff and hopefully a good laugh.</p>
+        <p>Feel free to browse around – who knows, you might even find a hidden clue or Easter egg along the way!</p>
+        <p>Click around and let’s get started!</p>
 
+        <div class="quote-section">
+        <h2 style="">Random Quote:</h2>
+        <blockquote onload="randomQuote();" id="quote"></blockquote>
+</div>
+</div>
 </body>
 </html>
