@@ -53,7 +53,7 @@
             flex-grow: 1;
             padding: 20px;
             color: #ebdded;
-            background-color: #211638;
+            background: linear-gradient(135deg, #4e245d, #14586b);
             position: relative;
         }
 
@@ -64,6 +64,7 @@
         .quote-section {
             border: 8px solid #5a3a5c;
             background-color: #1c1f2e;
+            opacity:0.8;
             color: #a4a7bd;
             text-align: center;
         }
@@ -76,8 +77,8 @@
         }
     </style>
     <script>
-           function setup() {
-        document.getElementById("nojserror").style.visibility = "collapse";
+        function setup() {
+            document.getElementById("nojserror").style.visibility = "collapse";
         }
         function randomQuote() {
             document.getElementById("quote").innerHTML = ["“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler",
