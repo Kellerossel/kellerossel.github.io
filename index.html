@@ -9,7 +9,7 @@
         body {
             overflow: hidden;
             font-family: Arial, sans-serif;
-            background-color: #211638;
+            background: linear-gradient(135deg, #4e245d, #14586b);
             margin: 0;
             padding: 0;
             display: flex;
@@ -27,7 +27,6 @@
         }
 
         .navbar {
-            background-color: #333;
             width: 200px;
             height: 100vh;
             display: flex;
@@ -37,23 +36,23 @@
         }
         .navbar a {
             padding: 20px;
-            color: white;
+            color: #fff;
             text-align: left;
             text-decoration: none;
-            border-bottom: 1px solid #444;
-            background-color: #575757;
+            border-bottom: 1px solid; /* Define the thickness of the bottom border */
+            border-image: linear-gradient(90deg, rgba(165, 165, 165, 0.6), rgba(255, 255, 255, 0)) 1;
+            background: none;
             cursor: pointer;
         }
 
         .navbar a:hover {
-            background-color: #c42bcf;
+            background: linear-gradient(90deg, rgba(165, 21, 179, 0.6), rgba(165, 21, 179, 0));
         }
 
         .content {
             flex-grow: 1;
             padding: 20px;
             color: #ebdded;
-            background: linear-gradient(135deg, #4e245d, #14586b);
             position: relative;
         }
 
@@ -62,10 +61,10 @@
         }
 
         .quote-section {
-            border: 8px solid #5a3a5c;
-            background-color: #1c1f2e;
-            opacity:0.8;
-            color: #a4a7bd;
+            border: 2px solid #dedede;
+            border-radius: 20px;
+            background-color: rgba(180, 180, 180, 0.2);
+            color: #dedede;
             text-align: center;
         }
         #nojserror {
