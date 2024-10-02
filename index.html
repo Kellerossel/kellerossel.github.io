@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kellerossels personal Website.">
-    <title>Kellerossel -page-</title>
+    <meta name="description" content="Kellerossel's personal Website.">
+    <title>Kellerossel - Under Development</title>
     <style>
         body {
             overflow: hidden;
@@ -39,7 +39,7 @@
             color: #fff;
             text-align: left;
             text-decoration: none;
-            border-bottom: 1px solid; /* Define the thickness of the bottom border */
+            border-bottom: 1px solid;
             border-image: linear-gradient(90deg, rgba(165, 165, 165, 0.6), rgba(255, 255, 255, 0)) 1;
             background: none;
             cursor: pointer;
@@ -67,6 +67,7 @@
             color: #dedede;
             text-align: center;
         }
+
         #nojserror {
             min-height: 100vh;
             min-width: 100vw;
@@ -74,11 +75,25 @@
             background-color: #1c1c1c;
             color: #d8d8d8;
         }
+
+        /* Style for the Under Development icon */
+        .under-development {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .under-development img {
+            width: 300px; /* Adjust size as necessary */
+            height: auto;
+        }
     </style>
     <script>
         function setup() {
             document.getElementById("nojserror").style.visibility = "collapse";
         }
+
         function randomQuote() {
             document.getElementById("quote").innerHTML = ["“Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” – Martin Fowler",
                    "“It’s not a bug – it’s an undocumented feature.” – Anonymous",
@@ -105,9 +120,13 @@
         <p>Click around and let’s get started!</p>
 
         <div class="quote-section">
-        <h2 style="">Random Quote:</h2>
-        <blockquote onload="randomQuote();" id="quote"></blockquote>
-</div>
-</div>
+            <h2>Random Quote:</h2>
+            <blockquote onload="randomQuote();" id="quote"></blockquote>
+        </div>
+
+        <div class="under-development">
+            <img src="/path-to-your-image.png" alt="Under Development Icon">
+        </div>
+    </div>
 </body>
 </html>
