@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kellerossels personal Website.">
     <title>Kellerossel -page-</title>
-    <style>body {
+    <style>
+        body {
             overflow: hidden;
             height: 100%;
             font-family: Arial, sans-serif;
@@ -39,7 +40,7 @@
             color: #fff;
             text-align: left;
             text-decoration: none;
-            border-bottom: 1px solid; /* Define the thickness of the bottom border */
+            border-bottom: 1px solid;
             border-image: linear-gradient(90deg, rgba(165, 165, 165, 0.6), rgba(255, 255, 255, 0)) 1;
             background: none;
             cursor: pointer;
@@ -75,12 +76,21 @@
             color: d8d8d8;
         }
     </style>
+    
+    <!-- GitHub Contributions Calendar Library -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar-responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar.min.js"></script>
+
     <script>
-    function setup() {
-        document.getElementById("nojserror").style.display = "none";
-    }
-        //I removed all Comments and fucked up everything that makes this easier to understand. Sorry, I had a bad Day :(
-let intervalId=null;let iSv=false;function sK(e){const img=document.createElement('img');img.src='https://avatars.githubusercontent.com/u/135382097?v=4';img.alt='Test';img.width=40;img.height=40;img.classList.add('spawned');const imgRect=e.target.getBoundingClientRect();const imgWidth=40;const imgHeight=40;img.style.left=(e.clientX-imgRect.left-imgWidth/2)+'px';img.style.top=(e.clientY-imgRect.top-imgHeight/2)+'px';img.style.borderRadius='50%';const content=document.querySelector('.content');content.appendChild(img);let xv=Math.floor(Math.random()*10)-5;let yv=-5;function mI(){let cL=parseInt(img.style.left);let cT=parseInt(img.style.top);img.style.left=cL+xv+'px';img.style.top=cT+yv+'px';xv=xv/1.2;yv=yv+0.5;if(cT>window.innerHeight||cL<0||cL>window.innerWidth){img.remove();clearInterval(moveInterval);}}const moveInterval=setInterval(mI,10);}function SoM(e){if(!iSv){iSv=true;sK(e);setTimeout(()=>{iSv=false;},100);}}function d(e){e.target.addEventListener('mousemove', SoM);}function b(e){e.target.removeEventListener('mousemove', SoM);}
+        function setup() {
+            document.getElementById("nojserror").style.display = "none";
+        }
+
+        let intervalId=null;let iSv=false;
+        function sK(e){const img=document.createElement('img');img.src='https://avatars.githubusercontent.com/u/135382097?v=4';img.alt='Test';img.width=40;img.height=40;img.classList.add('spawned');const imgRect=e.target.getBoundingClientRect();const imgWidth=40;const imgHeight=40;img.style.left=(e.clientX-imgRect.left-imgWidth/2)+'px';img.style.top=(e.clientY-imgRect.top-imgHeight/2)+'px';img.style.borderRadius='50%';const content=document.querySelector('.content');content.appendChild(img);let xv=Math.floor(Math.random()*10)-5;let yv=-5;function mI(){let cL=parseInt(img.style.left);let cT=parseInt(img.style.top);img.style.left=cL+xv+'px';img.style.top=cT+yv+'px';xv=xv/1.2;yv=yv+0.5;if(cT>window.innerHeight||cL<0||cL>window.innerWidth){img.remove();clearInterval(moveInterval);}}const moveInterval=setInterval(mI,10);}
+        function SoM(e){if(!iSv){iSv=true;sK(e);setTimeout(()=>{iSv=false;},100);}}
+        function d(e){e.target.addEventListener('mousemove', SoM);}
+        function b(e){e.target.removeEventListener('mousemove', SoM);}
     </script>
 </head>
 <body onload="setup();">
@@ -93,23 +103,34 @@ let intervalId=null;let iSv=false;function sK(e){const img=document.createElemen
     <div class="content">
         <img onmouseover="d(event)" onmouseout="b(event)" 
              src="https://avatars.githubusercontent.com/u/135382097?v=4" alt="My Profile Picture" width="150" style="border-radius: 50%;  border: 5px solid #1f261f;">
-<p>
-This is me. I actually am an ASCII art Cat face in real life.<br><br>Okay, unfunny jokes aside I will shortly introduce myself.
-Online I am going by the name of Kellerossel. You can find me in different free Online Games or on different other Websites.<br>
-I know the programming languages <a href="https://www.python.org/" style="color: #b520e3;">Python</a> and 
-<a href="https://circuitpython.org/" style="color: #b520e3;">Circuitpython</a>, a bit of 
-<a href="https://www.c-howto.de/" style="color: #3cadb5;">C/C++</a>, some <a href="https://www.arduino.cc/" style="color: #3cadb5;">Arduino</a>
-and a small amount of <a href="https://html.spec.whatwg.org/multipage/" style="color: #9e7b11;">HTML</a>, 
-<a href="https://www.w3.org/Style/CSS/Overview.en.html" style="color: #9e7b11;">CSS</a>, and 
-<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" style="color: #9e7b11;">JavaScript</a>.
-<br><br>Further I have a lot of other hobbies associated with Science, Maths, Physics, and Computers, love all types of interesting Projects and have a strong tendency to forget the essential stuff.<br>
-What am I learning/doing rn? Im learning LaTex. Its used for a lot of stuff, but essentially all kinds of Scientific Papers. You can do some fun stuff with it. Here is an example:<br><br>
-<code style="background-color: rgba(45, 45, 45, 0.7); color: #c78ef5; border: 4px solid rgba(63, 63, 63, 0.7); border-radius: 2px;">\begin{document}\[-\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 -q}\]\end{document}</code>
-<br><br>the Example displays the quadratic Formula and compiles to whats seen below <br><br>
-<div style="background-color: #dedede; border-radius: 20px; width: 220px;"><img alt="PQ formula LaTex" src="https://raw.githubusercontent.com/Kellerossel/Kellerossel.github.io/main/equation.png"></div>
-<br>
-yeah, thats basically it. 
-</p>
-</div>
+        <p>
+            This is me. I actually am an ASCII art Cat face in real life.<br><br>Okay, unfunny jokes aside I will shortly introduce myself.
+            Online I am going by the name of Kellerossel. You can find me in different free Online Games or on different other Websites.<br>
+            I know the programming languages <a href="https://www.python.org/" style="color: #b520e3;">Python</a> and 
+            <a href="https://circuitpython.org/" style="color: #b520e3;">Circuitpython</a>, a bit of 
+            <a href="https://www.c-howto.de/" style="color: #3cadb5;">C/C++</a>, some <a href="https://www.arduino.cc/" style="color: #3cadb5;">Arduino</a>
+            and a small amount of <a href="https://html.spec.whatwg.org/multipage/" style="color: #9e7b11;">HTML</a>, 
+            <a href="https://www.w3.org/Style/CSS/Overview.en.html" style="color: #9e7b11;">CSS</a>, and 
+            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" style="color: #9e7b11;">JavaScript</a>.
+            <br><br>Further I have a lot of other hobbies associated with Science, Maths, Physics, and Computers, love all types of interesting Projects and have a strong tendency to forget the essential stuff.<br>
+            What am I learning/doing rn? Im learning LaTex. Its used for a lot of stuff, but essentially all kinds of Scientific Papers. You can do some fun stuff with it. Here is an example:<br><br>
+            <code style="background-color: rgba(45, 45, 45, 0.7); color: #c78ef5; border: 4px solid rgba(63, 63, 63, 0.7); border-radius: 2px;">\begin{document}-\frac{p}{2} \pm \sqrt{\left(\frac{p}{2}\right)^2 -q}\end{document}</code>
+            <br><br>the Example displays the quadratic Formula and compiles to whats seen below <br><br>
+            <div style="background-color: #dedede; border-radius: 20px; width: 220px;">
+                <img alt="PQ formula LaTex" src="https://raw.githubusercontent.com/Kellerossel/Kellerossel.github.io/main/equation.png">
+            </div>
+            <br>
+            yeah, thats basically it. 
+        </p>
+
+        <!-- GitHub Contributions Section -->
+        <h2>My GitHub Contributions</h2>
+        <div id="github-contributions" class="calendar"></div>
+    </div>
+
+    <script>
+        // Initialize GitHub Contributions Calendar
+        GitHubCalendar("#github-contributions", "Kellerossel");  // Replace "Kellerossel" with your GitHub username if different
+    </script>
 </body>
 </html>
