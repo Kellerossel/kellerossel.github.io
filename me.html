@@ -109,23 +109,21 @@
     document.getElementById("nojserror").style.display = "none";
 
     // GitHub Contributions
-    try {
-        const response = await fetch('https://github.com/users/Kellerossel/contributions');
-        if (!response.ok) throw new Error("Network response was not ok");
-        const svgText = await response.text();
-        const container = document.getElementById("github-contributions");
-        container.innerHTML = svgText;
+    
+            // Load the SVG from local storage and embed it in the div
+            const contributionsContainer = document.getElementById("github-contributions");
+            const svgPath = "contributions.svg"; // Path to your downloaded SVG file
 
-        const days = container.querySelectorAll(".ContributionCalendar-day");
-        days.forEach(day => {
-            const level = day.getAttribute("data-level");
-            day.classList.add("day");
-            day.dataset.level = level;
-        });
-    } catch (error) {
-        console.error("Error loading contributions:", error);
-        document.getElementById("github-contributions").innerText = "Error loading contributions";
-    }
+            // Create an <img> element to display the SVG
+            const svgImage = document.createElement("img");
+            svgImage.src = svgPath;
+            svgImage.alt = "GitHub Contributions Calendar";
+            svgImage.style.width = "100%"; // Adjust size as needed
+            svgImage.style.maxWidth = "600px"; // Maximum width for responsive design
+            
+            // Clear the loading message and append the SVG
+            contributionsContainer.innerHTML = ""; // Clear loading text
+            contributionsContainer.appendChild(svgImage);
 }
 
             
@@ -166,9 +164,8 @@
             <br>
             yeah, thats basically it. 
         </p>
-
-        <h2>Mock GitHub Contributions Calendar</h2>
-        <div id="github-contributions"></div>
+        <h2>GitHub Contributions Calendar</h2>
+        <div id="github-contributions">Loading...</div>
         
     </div>
 </body>
