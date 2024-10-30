@@ -109,25 +109,22 @@
             document.getElementById("nojserror").style.display = "none";
 
             // Doing the Github Thingy
-            async function loadGitHubContributions() {
-                try {
-                const response = await fetch(`https://github.com/users/Kellerossel/contributions`);
-                const svgText = await response.text();
-            
-                const container = document.getElementById("github-contributions");
-                container.innerHTML = svgText;
-                const days = container.querySelectorAll(".ContributionCalendar-day");
-                days.forEach(day => {
-                    const level = day.getAttribute("data-level");
-                    day.classList.add("day"); // Add a class to each day for styling
-                });
-            } catch (error) {
-                console.error("Error loading contributions:", error);
-                document.getElementById("github-contributions").innerText = "Error loading contributions";
-            }
+            try {
+            const response = await fetch(`https://github.com/users/Kellerossel/contributions`);
+            const svgText = await response.text();
+            const container = document.getElementById("github-contributions");
+            container.innerHTML = svgText;
+            const days = container.querySelectorAll(".ContributionCalendar-day");
+            days.forEach(day => {
+            const level = day.getAttribute("data-level");
+                day.classList.add("day"); // Add a class to each day for styling
+            });
+        } catch (error) {
+            console.error("Error loading contributions:", error);
+            document.getElementById("github-contributions").innerText = "Error loading contributions";
+        }
     }
             
-        }
 
         let intervalId=null;let iSv=false;
         function sK(e){const img=document.createElement('img');img.src='https://avatars.githubusercontent.com/u/135382097?v=4';img.alt='Test';img.width=40;img.height=40;img.classList.add('spawned');const imgRect=e.target.getBoundingClientRect();const imgWidth=40;const imgHeight=40;img.style.left=(e.clientX-imgRect.left-imgWidth/2)+'px';img.style.top=(e.clientY-imgRect.top-imgHeight/2)+'px';img.style.borderRadius='50%';const content=document.querySelector('.content');content.appendChild(img);let xv=Math.floor(Math.random()*10)-5;let yv=-5;function mI(){let cL=parseInt(img.style.left);let cT=parseInt(img.style.top);img.style.left=cL+xv+'px';img.style.top=cT+yv+'px';xv=xv/1.2;yv=yv+0.5;if(cT>window.innerHeight||cL<0||cL>window.innerWidth){img.remove();clearInterval(moveInterval);}}const moveInterval=setInterval(mI,10);}
