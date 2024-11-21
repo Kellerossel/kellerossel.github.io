@@ -59,6 +59,46 @@
         .content h1 {
             margin-top: 0;
         }
+
+        .post-container {
+            display: inline-grid;
+            grid-template-columns: repeat(3, 1fr); /* Explicitly create 3 rows */
+            gap: 20px;
+            grid-auto-flow: row;           /* Fill items into columns */
+            justify-content: space-evenly;
+            width: 100%;
+        }
+
+
+        .post {
+            border: 2px #b52073 solid;
+            border-radius: 15px;
+            padding-left: 10px;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            padding-right: 50px;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            color: #b52073;
+            text-decoration: none;
+            transition: 0.4s;
+        }
+
+        .post img {
+            width: 100px;
+            height: 100px;
+            margin-left: 40px;
+        }
+
+        .post:hover {
+            background-color: rgba(181, 32, 115, 0.5);
+        }
+
+        .post:hover::after {
+            background-color: #b52073;
+        }
+
         #nojserror {
             min-height: 100vh;
             min-width: 100vw;
@@ -70,7 +110,6 @@
     <script>
         function setup() {
             document.getElementById("nojserror").style.display = "none";
-            window.location.href = "https://kellerossel.github.io/index.html";
         }
     </script>
 </head>
@@ -84,8 +123,13 @@
 
     <!-- Content Area -->
     <div class="content">
-        <h1>Welcome</h1>
-        <p>This Part of my Website is unfinished and for this reason you will be brought back to the landing Page.
+        <h1>Welcome to my Blog!</h1>
+        <p>This Part of my Website is unfinished and for this reason you will be brought back to the landing Page.</p>
+        <div class="post-container">
+        <a href="https://kellerossel.github.io/blog/legalstuff.html" class="post">
+            <img src="https://cdn.creazilla.com/emojis/55348/scroll-emoji-clipart-xl.png" alt="Test">
+            Is this Website illegal?</a>
+    </div>
     </div>
 
 </body>
