@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kellerossel's personal website.">
+    <title>Kellerossel's Blog - The German Impressumspflicht</title>
+    <style>
+        body {
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #3e044d, #04184b);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+        .return-btn {
+            padding: 20px;
+            color: #fff;
+            text-align: left;
+            text-decoration: none;
+            border-bottom: 1px solid;
+            border-image: linear-gradient(90deg, rgba(165, 165, 165, 0.6), rgba(255, 255, 255, 0)) 1;
+            background: none;
+            cursor: pointer;
+        }
+
+        .return-btn:hover {
+            background: linear-gradient(90deg, rgba(165, 21, 179, 0.6), rgba(165, 21, 179, 0));
+        }
+
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            color: #ebdded;
+            position: relative;
+            overflow-y: auto;
+        }
+        
+        
+
+        .content h1 {
+            margin-top: 0;
+        }
+
+        .content blockquote {
+            font-style: italic;
+            color: #c9a9d4;
+            border-left: 4px solid #804aa0;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+
+        .content .small-text {
+            font-size: 0.85em;
+            color: #bbb;
+        }
+
+        .content img {
+            display: block;
+            margin: 20px auto;
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        #nojserror {
+            min-height: 100vh;
+            min-width: 100vw;
+            text-align: center;
+            background-color: #1c1c1c;
+            color: d8d8d8;
+        }
+    </style>
+    <script>
+        function setup() {
+            document.getElementById("nojserror").style.display = "none";
+        }
+    </script>
+</head>
+<body onload="setup();">
+    <div id="nojserror">This Site requires JavaScript to run!</div>
+    <a class="return-btn" href="https://kellerossel.github.io/blog.html">Return to Overview</a>
+
+    <!-- Content Area -->
+    <div class="content">
+        <h1>Is my Website Illegal?</h1>
+        
+        <p>The first we are gonna learn about the kinda weird german word "Impressum".
+            So, if you don’t know what an <strong>Impressum</strong> is, here’s a quick run-down in my own words:<br><br>
+            An Impressum is basically a legal act in Germany (and some other places, but I only care about Germany since that’s where I live). It’s like a page on your website where you have to list your full name, contact info, and even your address (or the company’s info if you’re a business).
+        </p>
+
+        <img src="https://via.placeholder.com/800x400" alt="Illustration of legal documents">
+
+        <p>
+            At first, I was kind of worried that I’d be forced to put my personal details out there for everyone to see, which I really don’t want to do. But after digging around in the <strong>DDG (Digitale-Dienste Gesetz/Digital Services Act)</strong>, I found this paragraph in §5 DDG:
+        </p>
+        
+        <blockquote>
+            <em>"in der Regel gegen Entgelt angebotene digitale Dienste"</em></blockquote>– which means "digital services generally offered for money." So, if my site has any way to make money, I need an Impressum.
+
+        <p>
+            Since my website doesn’t have ads or any way for people to send me money, I thought I was good. But then I looked at §7 and §10 of the <strong>TMG (Telemediengesetz/The German Telemedia Act)</strong>, and I realized that I’m still responsible for the content on my site. There’s a part that says it usually applies only if I know there’s an issue, but that’s not a guarantee. So, for now, I won’t be adding comments or similar features to my site.
+        </p>
+
+        <p class="small-text">
+            Just so we’re clear: I’m not a lawyer or anything like that. This post is just my take on German law as of 10.11.2024. You can find the actual text <a href="https://www.gesetze-im-internet.de/" target="_blank">here</a>. This is not legal advice.
+        </p>
+
+        <p class="small-text" style="text-align: center;">Please don't sue me ;-;</p>
+    </div>
+</body>
+</html>
