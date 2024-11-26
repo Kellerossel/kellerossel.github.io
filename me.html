@@ -91,7 +91,7 @@
 }
 
 .ContributionCalendar-day[data-level='3'] {
-    background-color: #FF4081;
+    background-color: #FE4081;
     border-radius: 15px;
 }
 
@@ -105,7 +105,7 @@ table.ContributionCalendar-grid {
 }
 
 table.ContributionCalendar-grid td {
-    padding: 4pt;
+    padding: 2pt;
 }
 
 table.ContributionCalendar-grid td span.sr-only {
@@ -115,6 +115,7 @@ table.ContributionCalendar-grid td span.sr-only {
 td.ContributionCalendar-label span[aria-hidden='true'] {
     font-size: 8pt;
     left: -1pt;
+    clip-path: none;
     background-color: #8B0045;
     border-radius: 2px;
     border-right: 4px solid #8B0045;
@@ -311,6 +312,7 @@ text.ContributionCalendar-label {
 }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar.min.js"></script>
+    /*Shoutout to whoever did this*/
 
     <script>
         function setup() {
